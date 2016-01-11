@@ -1,0 +1,8 @@
+.center-alignment {
+    width: 600px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}

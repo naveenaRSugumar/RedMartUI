@@ -1,0 +1,91 @@
+<html>
+
+    <head>
+        <center>
+            <h1>
+                <bold>
+                    <center>Customer Complaint Logging tool</center>
+                </bold>
+            </h1>
+        </center>
+
+        <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../../node_modules/angular/angular.min.js"></script>
+        <script src="../../node_modules/angular-mocks/angular-mocks.js"></script>
+
+        <script src="../js/app.js"></script>
+        <script src="../js/view.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    </head>
+
+    <body ng-app="myApp" ng-controller="viewController">
+        <div class="center-alignment">
+
+            <br>
+
+            <ul class="nav nav-tabs nav-justified">
+                <li role="presentation" class="active">
+                    <a href="view.html">View ticket</a>
+                </li>
+                <li role="presentation">
+                    <a href="create.html">Create ticket</a>
+                </li>
+                <li role="presentation">
+                    <a href="edit.html">Edit ticket</a>
+                </li>
+            </ul>
+
+            <div class="input-group" style="margin-top: 50px;">
+                <input type="text" class="form-control" placeholder="Enter the customerName" ng-model="name" required>
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" ng-click="submitId()">Go!</button>
+                </span>
+            </div>
+
+            <div class="panel panel-primary" style="margin-top: 50px;">
+
+                <div class="panel-heading">Ticket Details</div>
+                <table class="table">
+                    <tr>
+                        <th>Ticket-num</th>
+                        <th>Customer-name</th>
+                        <th>Customer-comments</th>
+                        <th>status</th>
+                        <th>Created-by</th>
+                        <th>Assigned-to</th>
+                    </tr>
+                    <tr>
+                        <td ng-repeat="item in responseData">{{item}}</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="modal fade" id="errorInfoModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">Error!!!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Please enter a valid id</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+    </body>
+</html>

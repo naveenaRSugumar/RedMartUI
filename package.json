@@ -1,0 +1,9 @@
+{
+  "name": "redMartUIProject",
+  "version": "0.0.1",
+  "dependencies": {
+    "browser-sync": "^2.10.1",
+    "gulp": "^3.9.0",
+    "http-proxy-middleware": "^0.9.0"
+  }
+}
